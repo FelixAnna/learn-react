@@ -1,0 +1,51 @@
+.info_all{
+	margin: 20px 87px;
+}
+
+.info_center {
+	min-width:160px;
+	//max-width:35%;
+	//float:left;
+}
+.img_photo{
+	max-width: 280px;
+	height: auto;
+	margin: auto 3px;
+}
+.info_bottom{
+	min-width: 200px;
+    //max-width: 72%;
+    //margin-left: 15px;
+    //display: inline-block;
+	//border: 1px solid #e8e8e8
+}
+.info_center_button_list{
+	margin-top: 5px;
+	margin-bottom:5px;
+}
+.info_center_button{
+	text-align:center;
+	padding: 0 10px;
+    max-width: 20%;
+    display: inline-block;
+	cursor:pointer;
+}
+.info_bottom_title{
+	width:100%;
+	border-top: 3px solid #e1e1e1;
+	text-align: center;
+	padding: 12px;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.info_bottom_details{
+	width:100%;
+	text-align: left;
+	height: 100%;
+	padding: 12px;
+	border-bottom: 3px solid #e8e8e8;
+}
+
+.info_bottom_more{
+	margin:12px 0;
+}

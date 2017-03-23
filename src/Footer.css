@@ -1,0 +1,16 @@
+.templatemo_footer {
+    clear: both;
+    padding: 30px 10px 15px;
+    margin: 0 auto;
+    color: #666;
+    text-align: center;
+	background: #e1e1e1;
+	
+	a{	
+		text-decoration: none;
+	}
+	.cleaner
+	{
+		clear: both;
+	}
+}
