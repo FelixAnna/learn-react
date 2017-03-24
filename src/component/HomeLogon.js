@@ -6,7 +6,7 @@ import Download from 'material-ui/svg-icons/file/file-download';
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 
-class HomeLoginComponent extends Component {
+class HomeLogonComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -71,7 +71,7 @@ class HomeLoginComponent extends Component {
     buildTop() {
           return <div className="info_top">
 			  <div>
-				  <h2>{this.props.realName}</h2>
+				  <h2>{this.props.data.realName}</h2>
 			  </div>
 		  </div>
 	  }
@@ -84,11 +84,11 @@ class HomeLoginComponent extends Component {
               />
           ];
 
-          const emialText = `mailTo: ${this.props.email}`;
+          const emialText = `mailTo: ${this.props.data.email}`;
 		  return <div className="info_center">
 			  <div>
                   {
-                      this.props.photos.map((photo, index)=>{
+                      this.props.data.photos.map((photo, index)=>{
                           return <img key={index} className="img_photo" src={photo} />
                       })
                   }
@@ -107,7 +107,7 @@ class HomeLoginComponent extends Component {
 						  targetOrigin={{horizontal: 'left', vertical: 'top'}}
 						  onRequestClose={this.handleWechatClose}
 					  >
-						  <img src={this.props.wechat}/>
+						  <img src={this.props.data.wechat}/>
 					  </Popover>
 				  </div>
 				  <div className="info_center_button">
@@ -128,7 +128,7 @@ class HomeLoginComponent extends Component {
                           open={this.state.openPhone}
                           onRequestClose={this.handlePhoneClose}
                       >
-                          电话：{this.props.phone}, 工作时间请尽量勿扰，优先邮件，微信沟通，谢谢！
+                          电话：<b>{this.props.data.phone}</b>, 工作时间请尽量勿扰，优先邮件，微信沟通，谢谢！
                       </Dialog>
 				  </div>
 			  </div>
@@ -137,7 +137,7 @@ class HomeLoginComponent extends Component {
     buildBottom = ()=>{
 		  return <div className="info_bottom">
 			  <div className="info_bottom_title"><h3>简介</h3></div>
-			  <div className="info_bottom_details" dangerouslySetInnerHTML={{__html: this.props.description}}>
+			  <div className="info_bottom_details" dangerouslySetInnerHTML={{__html: this.props.data.description}}>
 			  </div>
 			  <div className="info_bottom_more">
                   <RaisedButton
@@ -169,4 +169,4 @@ class HomeLoginComponent extends Component {
 	  }
 }
 
-export default HomeLoginComponent;
+export default HomeLogonComponent;

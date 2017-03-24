@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
-class HomeNoLoginComponent extends Component {
+class HomeLogoutComponent extends Component {
     constructor(props) {
         super(props);
     }
@@ -19,7 +19,7 @@ class HomeNoLoginComponent extends Component {
             <div>
                 <div>
                     <img
-                        onTouchTap={this.handleJoinTouchTap}
+                        onTouchTap={this.props.onSiginClick}
                         title="注册账号"
                         src="images/signin.jpg"
                     />
@@ -37,7 +37,7 @@ class HomeNoLoginComponent extends Component {
                 </div>
                 <div>
                     <RaisedButton
-                        onTouchTap={this.handleLoginTouchTap}
+                        onTouchTap={this.props.onLogonClick}
                         primary={true}
                         label="登陆"
                     />
@@ -47,4 +47,4 @@ class HomeNoLoginComponent extends Component {
     }
 }
 
-export default HomeNoLoginComponent;
+export default HomeLogoutComponent;
