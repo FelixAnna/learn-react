@@ -2,50 +2,64 @@
 	margin: 20px 87px;
 }
 
-.info_center {
-	min-width:160px;
-	//max-width:35%;
-	//float:left;
+.info_introduce{
+	width:100%;
+	border-bottom: 3px solid #29B6F6;
+	text-align: center;
+	padding: 0 12px 12px;
 }
-.img_photo{
+.info_introduce_title {
+	font: 14px;
+	border-bottom: 3px solid #B3E5FC;
+}
+.info_introduce_subtitle {
+	text-align:left;
+	border-bottom: 1px solid #B3E5FC;
+}
+.info_introduce_details{
+	width:100%;
+	text-align: left;
+	height: 100%;
+	padding: 12px;
+}
+.info_introduce_skills{
+	border:3px dashed #B3E5FC;
+	border-radius: 8px;
+}
+
+.info_photos {
+	min-width:160px;
+	border-bottom: 3px solid #29B6F6;
+}
+.info_photos_img{
 	max-width: 280px;
 	height: auto;
 	margin: auto 3px;
 }
-.info_bottom{
-	min-width: 200px;
-    //max-width: 72%;
-    //margin-left: 15px;
-    //display: inline-block;
-	//border: 1px solid #e8e8e8
-}
-.info_center_button_list{
+
+.info_contact_button_list{
 	margin-top: 5px;
 	margin-bottom:5px;
+	border-bottom: 3px solid #29B6F6;
 }
-.info_center_button{
+.info_contact_button{
 	text-align:center;
 	padding: 0 10px;
     max-width: 20%;
     display: inline-block;
 	cursor:pointer;
 }
-.info_bottom_title{
-	width:100%;
-	border-top: 3px solid #e1e1e1;
-	text-align: center;
-	padding: 12px;
-	border-bottom: 1px solid #e8e8e8;
-}
 
-.info_bottom_details{
-	width:100%;
-	text-align: left;
-	height: 100%;
-	padding: 12px;
-	border-bottom: 3px solid #e8e8e8;
+.info_download{
+	min-width: 200px;
 }
-
-.info_bottom_more{
+.info_download_more{
 	margin:12px 0;
+}
+
+.focusColor{
+	color: rgb(0,178,112);
+}
+.remarkText{
+	font-size: 12px;
 }

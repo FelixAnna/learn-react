@@ -8,8 +8,8 @@ import './MenuBar.css';
 
 const homeIcon = <FontIcon className="material-icons">home</FontIcon>;
 const productIcon = <FontIcon className="material-icons">pages</FontIcon>;
-const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
-const contactIcon = <FontIcon className="material-icons">contacts</FontIcon>;
+const product2Icon = <FontIcon className="material-icons">pages</FontIcon>;
+const aboutIcon = <FontIcon className="material-icons">contacts</FontIcon>;
 
 injectTapEventPlugin();
 /**
@@ -31,23 +31,23 @@ class BottomNavigationExampleSimple extends Component {
       <Paper zDepth={1}>
         <BottomNavigation selectedIndex={this.state.selectedIndex}>
           <BottomNavigationItem
-            label="Home"
+            label="主页"
             icon={homeIcon}
             onTouchTap={() => this.select(0)}
           />
 		  <BottomNavigationItem
-            label="Products"
+            label="产品"
             icon={productIcon}
             onTouchTap={() => this.select(1)}
           />
-          <BottomNavigationItem
-            label="About Us"
-            icon={favoritesIcon}
+		  <BottomNavigationItem
+            label="产品2"
+            icon={product2Icon}
             onTouchTap={() => this.select(2)}
           />
           <BottomNavigationItem
-            label="Contact"
-            icon={contactIcon}
+            label="关于"
+            icon={aboutIcon}
             onTouchTap={() => this.select(3)}
           />
         </BottomNavigation>
