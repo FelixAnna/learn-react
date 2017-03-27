@@ -1,7 +1,7 @@
 import {ACTION_LOGON, ACTION_LOGOUT, ACTION_SIGNIN, ACTION_GETDATA} from '../constant/ActionType.js';
 
+const userData = {id:27,name:"YuXiangyong"};
 const homeData = {
-          user: {id:27,name:"YuXiangyong"},
           realName: "余祥永",
           photos: [
               "images/jiahang.jpg",
@@ -98,11 +98,10 @@ export const getData = () => {
 export const logon = () => {
 	const response = {
 		success: true,
-		data: {id:27,name:"YuXiangyong"}
+		data: userData
 	};
 
-	return getData();//recceiveLogonData(response);
-	//dispatch(getData);
+	return recceiveLogonData(response);
 }
 
 export const logout = () => {
@@ -117,7 +116,7 @@ export const logout = () => {
 export const sigin = () => {
 	const response = {
 		success: true,
-		data: {id:27,name:"YuXiangyong"}
+		data: userData
 	};
 	
 	return recceiveSiginData(response);

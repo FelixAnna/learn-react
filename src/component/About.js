@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import HomeLogonComponent from './HomeLogon.js';
+import AboutLogonComponent from './AboutLogon.js';
 import HomeLogoutComponent from './HomeLogout.js';
 import './Home.css';
 
-class HomeComponent extends Component {
+class AboutComponent extends Component {
     constructor(props) {
         super(props);
     }
@@ -11,8 +11,8 @@ class HomeComponent extends Component {
     render() {
         let homePart = null;
         const props = this.props;
-        if(this.props.user ) {
-            homePart = <HomeLogonComponent {...props}/>
+        if(this.props.user) {
+            homePart = <AboutLogonComponent {...props}/>
         }
         else
         {
@@ -22,5 +22,5 @@ class HomeComponent extends Component {
     }
 }
 
-export default HomeComponent;
+export default AboutComponent;
 

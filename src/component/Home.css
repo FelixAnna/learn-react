@@ -1,5 +1,6 @@
 .info_all{
 	margin: 20px 87px;
+	text-align: center;
 }
 
 .info_introduce{
@@ -44,10 +45,15 @@
 }
 .info_contact_button{
 	text-align:center;
-	padding: 0 10px;
+	padding: 5px 15px;
     max-width: 20%;
     display: inline-block;
 	cursor:pointer;
+	zoom:0.8;
+	height:48px;
+}
+.info_contact_button:hover{
+	zoom:1.0;
 }
 
 .info_download{
@@ -62,4 +68,7 @@
 }
 .remarkText{
 	font-size: 12px;
+}
+.home_default_div {
+	text-align: center;
 }

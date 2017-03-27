@@ -50,7 +50,7 @@ class SkillMarkComponent extends Component {
 			case 'A':
 				avatarForcolor = "#1565C0";
 				avatarBackcolor = "#283593";
-				levelText = "精通并熟悉部分原理。";
+				levelText = "精通并精读过一本以上资料书或查阅过大量资料。";
 				break;
 			case 'B+':
 			case 'B':
@@ -78,7 +78,7 @@ class SkillMarkComponent extends Component {
 		}
 		return <Chip onTouchTap={this.handleTouchTap}
           backgroundColor={avatarForcolor}
-		  index={this.props.index}
+		  key={this.props.index}
           style={styles.chip}
         >
 		  <Avatar size={32} color={avatarForcolor} backgroundColor={avatarBackcolor} title="A:目前精通，B:目前熟练，C:曾经熟练，D:曾用已忘">
