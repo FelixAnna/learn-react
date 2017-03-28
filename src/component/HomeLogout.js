@@ -1,21 +1,32 @@
 import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
-import FlatButton from 'material-ui/FlatButton';
 
 class HomeLogoutComponent extends Component {
     constructor(props) {
         super(props);
 		this.state = {
-		    openLogon: true
+		    openLogon: true,
+			userName: '',
+			password: ''
 		};
+		this.changeUserName = this.changeUserName.bind(this);
+		this.changePassword = this.changePassword.bind(this);
+		this.handleLogonTouchTap = this.handleLogonTouchTap.bind(this)
     }
-
+	changeUserName(e){
+        this.setState({userName: e.target.value});
+    }
+	changePassword(e){
+        this.setState({password: e.target.value});
+    }
+	
     handleJoinTouchTap = () => {
         alert("Welcome join!");
     };
 
-    handleLoginTouchTap = () => {
+    handleLogonTouchTap = () => {
+		this.props.onLogonClick();
         alert("Welcome back!");
     };
 
@@ -35,7 +46,7 @@ class HomeLogoutComponent extends Component {
 					<div>
 						<img
 							onTouchTap={this.props.onSiginClick}
-							title="注册账号"
+							alt="注册账号"
 							src="images/signin.jpg"
 							height="100"
 						/>
@@ -45,15 +56,15 @@ class HomeLogoutComponent extends Component {
 				<div>
 					<div>
 						<div>用户名：</div>
-						<div><input/></div>
+						<div><input type="text" onChange={this.changeUserName} value={this.state.userName}/></div>
 					</div>
 					<div>
 						<div>密码：</div>
-						<div><input/></div>
+						<div><input type="password" onChange={this.changePassword} value={this.state.password}/></div>
 					</div>
 					<div>
 						<RaisedButton
-							onTouchTap={this.props.onLogonClick}
+							onTouchTap={this.handleLogonTouchTap}
 							primary={true}
 							label="登陆"
 						/>

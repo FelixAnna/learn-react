@@ -24,7 +24,21 @@ class MainTabsComponent extends Component {
 	constructor(props) {
 		super(props);
 	}
-	
+	handleTouchTap = (event) => {
+        // This prevents ghost click.
+        event.preventDefault();
+
+        this.setState({
+            openDownload: true
+        });
+    };
+	 componentDidMount() {
+		if(!this.props.user && localStorage.jiahang_jwt){
+			const { dispatch, logon, getData } = this.props
+			dispatch(logon());
+			dispatch(getData());
+		}
+	}
 	render() {
 		const props = this.props;
 		let about = null;
@@ -33,7 +47,7 @@ class MainTabsComponent extends Component {
 		//}
 		return (
 			  <Paper zDepth={1} >
-				<Tabs initialSelectedIndex={this.props.tabIndex?this.props.tabIndex:0} >
+				<Tabs initialSelectedIndex={this.props.tabIndex?this.props.tabIndex:0} onTouchTap={this.handleTouchTap}>
 				  <Tab label="主页" icon={homeIcon}>
 					<HomeComponent {...props}/>
 				  </Tab>
@@ -56,7 +70,12 @@ class MainTabsComponent extends Component {
 
 const mapStateToProps = (state) => {
 	if(state && (state.data || state.user)){
-	  return {
+		if(state.user && state.user.user && state.user.user.jwt !== localStorage.jiahang_jwt)
+		{
+			//update jwt for API call with token
+			localStorage.jiahang_jwt = state.user.user.jwt
+		}
+		return {
 			user : state.user.user,
 			data : state.data.data
 		  }
@@ -74,10 +93,14 @@ const mapDispatchToProps = (dispatch) => {
     },
 	onLogoutClick: () => {
       dispatch(logout());
+	  localStorage.removeItem("jiahang_jwt");
     },
 	onSiginClick: () => {
       dispatch(sigin());
-    }
+    },
+	dispatch: dispatch,
+	logon,
+	getData
   }
 }
 const MainContainer = connect(

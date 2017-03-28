@@ -30,17 +30,17 @@ class ContactComponent extends Component {
 	buildComponentPopver() {
 		return <div className="info_contact_button">
 					  <img onTouchTap={this.handleTouchTap}
-						  title={this.props.title}
+						  alt={this.props.title}
 						  src={this.props.src}
 					  />
                       <Popover
 						  open={this.state.openComponent}
 						  anchorEl={this.state.anchorEl}
-						  anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-						  targetOrigin={{horizontal: 'left', vertical: 'top'}}
+						  anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+						  targetOrigin={{horizontal: 'left', vertical: 'bottom'}}
 						  onRequestClose={this.handleClose}
 					  >
-						  <img src={this.props.text}/>
+						  <img src={this.props.text} alt={this.props.title}/>
 					  </Popover>
 				  </div>
 	}
@@ -55,7 +55,7 @@ class ContactComponent extends Component {
           ];
 		return <div className="info_contact_button">
 					  <img onTouchTap={this.handleTouchTap}
-						  title={this.props.title}
+						  alt={this.props.title}
 						  src={this.props.src}
 					  />
                       <Dialog
@@ -67,7 +67,7 @@ class ContactComponent extends Component {
                       >
                           <div><b className='focusColor'>{this.props.text}</b></div>
 						  <br />
-						  <div className = 'remarkText'>* 工作时间请<span className='focusColor'>优先使用微信或邮件沟通</span>，谢谢理解！</div>
+						  <div className='remarkText'>* 工作时间请<span className='focusColor'>优先使用微信或邮件沟通</span>，谢谢理解！</div>
                       </Dialog>
 				  </div>
 	}
@@ -77,7 +77,7 @@ class ContactComponent extends Component {
 		return <div className="info_contact_button">
 					  <a href={emialText} title={this.props.title}>
 					  <img
-						  title={this.props.title} src={this.props.src}
+						  alt={this.props.title} src={this.props.src}
 					  />
 					  </a>
 				  </div>
@@ -88,7 +88,7 @@ class ContactComponent extends Component {
 		return <div className="info_contact_button">
 					  <a href={this.props.text} title={this.props.title}>
 					  <img
-						  title={this.props.title} src={this.props.src}
+						  alt={this.props.title} src={this.props.src}
 					  />
 					  </a>
 				  </div>
@@ -100,16 +100,12 @@ class ContactComponent extends Component {
 		{
 			case "dialog":
 				return this.buildComponentDialog();
-				break;
 			case "popover":
 				return this.buildComponentPopver();
-				break;
 			case "link":
 				return this.buildComponentLink();
-				break;
 			case "email":
 				return this.buildComponentEmail();
-				break;
 			default:
 				return;
 		}

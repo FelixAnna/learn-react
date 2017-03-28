@@ -1,6 +1,6 @@
 import {ACTION_LOGON, ACTION_LOGOUT, ACTION_SIGNIN, ACTION_GETDATA} from '../constant/ActionType.js';
 
-const userData = {id:27,name:"YuXiangyong"};
+const userData = {id:27,name:"YuXiangyong",jwt:"EE3H6789SDADWDASDASDADWDW78DQW8DWWDSADQAWDSASDSDASFDASADASD"};
 const homeData = {
           realName: "余祥永",
           photos: [

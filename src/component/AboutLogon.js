@@ -100,7 +100,7 @@ class AboutLogonComponent extends Component {
 				  })}
 				  </ul>
 				  </div>
-				  <div style={styles.wrapper} className = "info_introduce_skills">
+				  <div style={styles.wrapper} className="info_introduce_skills">
 				  {skills}
 				  </div>
 			  </div>;
@@ -167,7 +167,7 @@ class AboutLogonComponent extends Component {
 			  <div>
                   {
                       this.props.data.photos.map((photo, index)=>{
-                          return <img key={index} className="info_photos_img" src={photo} />
+                          return <img key={index} className="info_photos_img" src={photo} alt=""/>
                       })
                   }
 			  </div>
@@ -175,7 +175,7 @@ class AboutLogonComponent extends Component {
 	  };
 	render() {
 		return (
-			<div className = "info_all">
+			<div className="info_all">
                 {this.buildIntroduce()}
 				{this.buildPhotos()}
 				{this.buildContactIcons()}
