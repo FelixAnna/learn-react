@@ -23,16 +23,18 @@ injectTapEventPlugin();
 class MainTabsComponent extends Component {
 	constructor(props) {
 		super(props);
+		this.handleTouchTap = this.handleTouchTap.bind(this);
 	}
+	
 	handleTouchTap = (event) => {
         // This prevents ghost click.
         event.preventDefault();
 
-        this.setState({
-            openDownload: true
-        });
+        //this.setState({
+        //    tabIndex: event.target.selectedIndex
+        //});
     };
-	 componentDidMount() {
+	componentDidMount() {
 		if(!this.props.user && localStorage.jiahang_jwt){
 			const { dispatch, logon, getData } = this.props
 			dispatch(logon());
@@ -41,10 +43,6 @@ class MainTabsComponent extends Component {
 	}
 	render() {
 		const props = this.props;
-		let about = null;
-		//if (this.props.tabIndex ===3 ) {
-			about = <AboutComponent {...props}/>
-		//}
 		return (
 			  <Paper zDepth={1} >
 				<Tabs initialSelectedIndex={this.props.tabIndex?this.props.tabIndex:0} onTouchTap={this.handleTouchTap}>
@@ -59,7 +57,7 @@ class MainTabsComponent extends Component {
 					产品2
 				  </Tab>
 				  <Tab label="关于" icon={aboutIcon}>
-					  {about}
+					  <AboutComponent {...props}/>
 				  </Tab>
 				</Tabs>
 			  </Paper>

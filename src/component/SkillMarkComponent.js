@@ -50,25 +50,25 @@ class SkillMarkComponent extends Component {
 			case 'A':
 				avatarForcolor = "#1565C0";
 				avatarBackcolor = "#283593";
-				levelText = "精通并精读过一本以上资料书或查阅过大量资料。";
+				levelText = (<div>精通且有<span className="keyText">丰富经验</span>，或者精读过最新版资料书并<span className="keyText">掌握所有主要技术点</span>。</div>);
 				break;
 			case 'B+':
 			case 'B':
 				avatarForcolor = "#2196F3";
 				avatarBackcolor = "#3F51B5";
-				levelText = "熟练使用，现有技能已经能胜任大部分工作。";
+				levelText = (<div>熟练使用，现有技能已经<span className="keyText">能胜任大部分工作</span>。</div>);
 				break;
 			case 'C+':
 			case 'C':
 				avatarForcolor = "#90CAF9";
 				avatarBackcolor = "#9FA8DA";
-				levelText = "曾经能熟练使用，但近期没有使用。";
+				levelText = (<div><span className="keyText">曾经能熟练使用</span>，但近期没有使用。</div>);
 				break;
 			case 'D+':
 			case 'D':
 				avatarForcolor = "#E3F2FD";
 				avatarBackcolor = "#E8EAF6";
-				levelText = "曾经能熟练使用，但近期没有使用，且已经遗忘。";
+				levelText = (<div><span className="keyText">曾经能熟练使用</span>，但近期没有使用，且已经遗忘。</div>);
 				break;
 			default:
 				avatarForcolor = "#E8F5E9";
@@ -92,8 +92,10 @@ class SkillMarkComponent extends Component {
                           open={this.state.openComponent}
                           onRequestClose={this.handleClose}
                       >
-                          <div>技能：<b className='focusColor'>{this.props.name}</b></div>
-						  <div>描述：<b className='focusColor'>{levelText}</b></div>
+						<div className="popup_body" >
+                          <div className="popup_body_skill">技能：<b className='focusColor'>{this.props.name}</b></div>
+						  <div className="popup_body_desc">描述：<div className='focusColor'>{levelText}</div></div>
+						 </div>
                       </Dialog>
         </Chip>
 	}

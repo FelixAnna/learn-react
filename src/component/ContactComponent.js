@@ -86,7 +86,7 @@ class ContactComponent extends Component {
 	buildComponentLink()
 	{
 		return <div className="info_contact_button">
-					  <a href={this.props.text} title={this.props.title}>
+					  <a href={this.props.text} target="_blank" title={this.props.title}>
 					  <img
 						  alt={this.props.title} src={this.props.src}
 					  />

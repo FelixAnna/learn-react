@@ -63,11 +63,29 @@
 	margin:12px 0;
 }
 
+.popup_body {
+	background: #eee;
+	border-radius: 5px;
+    margin: 0 -12px -24px;
+}
+.popup_body_skill {
+	padding: 15px 8px 10px;
+}
+.popup_body_desc {
+	padding: 10px 8px 15px;
+}
 .focusColor{
 	color: rgb(0,178,112);
+	display: inline-block;
 }
 .remarkText{
 	font-size: 12px;
+}
+.keyText{
+	border: 2px solid rgb(0,178,112);
+    background: #ee0;
+    border-radius: 3px;
+    color: #333;
 }
 .home_default_div {
 	text-align: center;
